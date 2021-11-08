@@ -18,10 +18,11 @@ Olá. Tudo bem? Abaixo segue algumas informações importantes que devem ser lev
 
 
 # Detalhes de implementação
-
+* O projeto foi desenvolvido em SpringBoot. Para executar a aplicação, basta rodar o arquivo ApiAssebleiaApplication.
 * A API foi dividida tem três pacotes em nível de negócio: "associado", "assembleia" e "votacao", mais um pacote "core"
 * Foi utilizado alguns conceitos de Portas e Adaptadores
-* Foi utilizado o banco de dados PostGreSQL para a implementação. As configurações estão no arquivo application.properties
+* A aplicação foi desenvolvida utilizando o banco de dados PostGreSQL para atender ao requisito no qual solicita a permanência dos dados mesmo reiniciando a aplicação. De todo modo, é possível também utilizar o banco de dados H2. Para tal basta desabilitar as propriedades relaciona ao PostGreSQL e habilitar as propriedades relacionadas ao H2, encontradas no arquivo application.properties.
+* Para utilização do PostGreSQL, basta apenas criar um banco de dados "db_assembleia" e as tabelas serão criadas automaticamente assim que o projeto for executado pela primeiva vez
 * Foi utilizado o Apache Kafka para mensageria. As configurações estão no arquivo application.properties 
 * Foi feito o tratamento de exceção
 * Foi utilizado o Swagger para documentação da aplicação
