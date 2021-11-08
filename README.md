@@ -5,7 +5,10 @@ Olá. Tudo bem? Abaixo segue algumas informações importantes que devem ser lev
 # Acessos - Swagger
 
 * Swagger: http://localhost:8080/api-assembleia/swagger-ui/#
-
+* Recursos relacionados ao Associado: http://localhost:8080/api-assembleia/swagger-ui/#/associado-controller-v-1
+* Recursos relacionados à Pauta: http://localhost:8080/api-assembleia/swagger-ui/#/pauta-controller-v-1
+* Recursos relacionados à Sessão: http://localhost:8080/api-assembleia/swagger-ui/#/sessao-controller-v-1
+* Recursos relacionados ao Votação: http://localhost:8080/api-assembleia/swagger-ui/#/votacao-controller-v-1
 
 # Detalhes de negócio
 
@@ -22,6 +25,7 @@ Olá. Tudo bem? Abaixo segue algumas informações importantes que devem ser lev
 * Foi utilizado o Apache Kafka para mensageria. As configurações estão no arquivo application.properties 
 * Foi feito o tratamento de exceção
 * Foi utilizado o Swagger para documentação da aplicação
+* A API está versionada  
 * Não foi utilizado o Lombok
 * Não consegui implementar a camada de Logs em tempo. Mas dando uma visão de implementação, eu utilizaria a anotação @Slf4j para logar o passo a passo do código
 * Não consegui implementar a camada de testes com JUnit e Jacoco em tempo. Mas dando uma visão de implementação, eu faria os asserts utilizando as mensagens das exceções lançadas
