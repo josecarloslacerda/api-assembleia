@@ -21,7 +21,9 @@ import com.desafio.sicredi.api.associado.adapters.dto.request.AssociadoInclusaoD
 import com.desafio.sicredi.api.associado.adapters.dto.response.AssociadoRetornoDto;
 import com.desafio.sicredi.api.associado.application.ports.AssociadoServicePort;
 import com.desafio.sicredi.core.domain.Associado;
+import com.desafio.sicredi.core.exception.CPFMalFormatadoException;
 import com.desafio.sicredi.core.patterns.Response;
+import com.desafio.sicredi.core.util.Utils;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -50,6 +52,8 @@ public class AssociadoControllerV1 {
 		produces = {MediaType.APPLICATION_JSON_VALUE})
 	public ResponseEntity<Response<AssociadoRetornoDto>> incluirAssociado(
 			@RequestBody @ApiParam(name="Associado") AssociadoInclusaoDto associadoDto){
+
+		validaCPFInformado(associadoDto.getCpf());
 
 		Associado associado = modelMapper.map(associadoDto, Associado.class);
 
@@ -89,8 +93,10 @@ public class AssociadoControllerV1 {
 	@ApiResponses(value = {@ApiResponse(code = 200, message = "Associado retornado", response = Response.class)})
 	@GetMapping("/associado/{cpf}")
 	public ResponseEntity<Response<AssociadoRetornoDto>> obterAssociadoPorCPF(
-			@PathVariable(value = "cpf", required = true, name = "cpf") @ApiParam(name="cpf")
+			@PathVariable(value = "cpf", required = true, name = "cpf") @ApiParam(name="cpf", example="50960648089")
 		String cpf){
+
+		validaCPFInformado(cpf);
 
 		Optional<Associado> associado = associadoService.findByCPF(cpf);
 
@@ -107,6 +113,12 @@ public class AssociadoControllerV1 {
 		}
 
 		return ResponseEntity.noContent().build();
+	}
+
+	private void validaCPFInformado(String cpf) {
+		if (!Utils.contemApenasDigito(cpf) || cpf.length() != 11) {
+			throw new CPFMalFormatadoException();
+		}
 	}
 
 }

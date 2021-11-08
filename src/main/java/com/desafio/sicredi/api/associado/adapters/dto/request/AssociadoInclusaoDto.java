@@ -20,7 +20,7 @@ public class AssociadoInclusaoDto {
 			name = "cpf",
 			allowEmptyValue = false,
 			required = true,
-			example = "99999999999")
+			example = "50960648089")
 	@NotEmpty(message="o CPF do Associado deve ser informado")
 	private String cpf;
 

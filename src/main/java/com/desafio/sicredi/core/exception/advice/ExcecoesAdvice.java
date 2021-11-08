@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.desafio.sicredi.core.exception.AssociadoJaVotouNaSessaoException;
 import com.desafio.sicredi.core.exception.AssociadoNaoAptoAssembleiaException;
 import com.desafio.sicredi.core.exception.AssociadoNaoCadastradoException;
+import com.desafio.sicredi.core.exception.CPFInformadoJaCadastradoException;
+import com.desafio.sicredi.core.exception.CPFInvalidoException;
+import com.desafio.sicredi.core.exception.CPFMalFormatadoException;
 import com.desafio.sicredi.core.exception.ConversaoObjetoJsonException;
 import com.desafio.sicredi.core.exception.ConversaoObjetoJsonException;
 import com.desafio.sicredi.core.exception.ExcecaoGenerica;
@@ -42,7 +45,10 @@ public class ExcecoesAdvice {
 			SessaoFechacaException.class,
 			SessaoNaoCadastradaException.class,
 			AssociadoNaoAptoAssembleiaException.class,
-			ConversaoObjetoJsonException.class})
+			ConversaoObjetoJsonException.class,
+			CPFInvalidoException.class,
+			CPFInformadoJaCadastradoException.class,
+			CPFMalFormatadoException.class})
 	public ResponseEntity<Response<DTO>> tratamentoExcecoes(ExcecaoGenerica ex){
 		Response<DTO> response = Response.Factory.criar();
 		response.setStatusCode(HttpStatus.BAD_REQUEST.value());
