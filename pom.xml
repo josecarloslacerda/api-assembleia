@@ -8,7 +8,7 @@
 		<version>2.5.6</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.desafio.sicredi.assembleia</groupId>
+	<groupId>com.desafio.sicredi</groupId>
 	<artifactId>api-assembleia</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>api-assembleia</name>
@@ -81,6 +81,11 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+			    <groupId>org.apache.maven.plugins</groupId>
+			    <artifactId>maven-resources-plugin</artifactId>
+			    <version>3.1.0</version>
 			</plugin>
 			<plugin>
 			    <groupId>org.jacoco</groupId>
