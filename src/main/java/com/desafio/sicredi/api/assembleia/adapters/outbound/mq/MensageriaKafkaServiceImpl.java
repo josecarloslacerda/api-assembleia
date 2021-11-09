@@ -40,7 +40,6 @@ public class MensageriaKafkaServiceImpl implements MensageriaServicePort {
 
 		try {
 			String json = mapper.writeValueAsString(votos);
-			System.out.println(json);
 			kafkaTemplate.send(topicName, json);
 		} catch (JsonProcessingException e) {
 			throw new ConversaoObjetoJsonException();
