@@ -1,6 +1,6 @@
-# Desafio Sicredi - Assembléia
+# Desafio - Assembléia
 
-Olá. Tudo bem? Abaixo segue algumas informações importantes que devem ser levadas em consideração ao avaliar a implemetação
+Abaixo segue algumas informações importantes que devem ser levadas em consideração ao avaliar a implemetação
 
 # Acessos - Swagger
 
